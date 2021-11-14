@@ -1,0 +1,2 @@
+{"LEVEL": "INFO", Message: "User A logged in", Timestamp: "2021-11-11 11:11:11"}
+{"LEVEL": "ERROR", Message: "Timeout Data Saving", Timestamp: "2021-11-11 12:12:12"}
