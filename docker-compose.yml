@@ -41,6 +41,19 @@ services:
       - 5044:5044
       - 9600:9600
     restart: always
+  nginx:
+    container_name: nginx
+    build: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/index.html:/var/www/html/index.html
+      - ./nginx/log:/var/log/nginx
+      - ./nginx/logrotate.sh.d/nginx:/etc/logrotate.sh.d/nginx
+      - ./nginx/logrotate.conf:/etc/logrotate.conf
+      - ./nginx/cron/cron.hourly:/etc/cron.hourly
+    restart: always
 
 volumes:
   elasticsearch-data:
